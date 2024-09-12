@@ -40,8 +40,8 @@ COPY --link --from=build /build/pydio/libdl.so.2 /lib64/libdl.so.2
 COPY --link --from=build /build/pydio/entrypoint.sh /entrypoint.sh
 COPY --link --from=build /etc/ssl/certs /etc/ssl/certs
 
-ENTRYPOINT /entrypoint.sh
-CMD cells start
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["cells", "start"]
 
 EXPOSE 8080
 
