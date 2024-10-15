@@ -10,5 +10,32 @@
       datasourceTemplate: "docker",
       packageNameTemplate: "alpine",
     },
+    {
+      depNameTemplate: "BusyBox",
+      fileMatch: ["^Dockerfile$"],
+      matchStrings: ["ARG BUSYBOX_VERSION=(?<currentValue>.*?)\\n"],
+      datasourceTemplate: "docker",
+      packageNameTemplate: "busybox",
+    },
+    {
+      depNameTemplate: "Cells",
+      fileMatch: ["^Dockerfile$"],
+      matchStrings: ["ARG CELLS_VERSION=(?<currentValue>.*?)\\n"],
+      datasourceTemplate: "github-releases",
+      packageNameTemplate: "pydio/cells",
+    },
+    // TODO: jq
+  ],
+  packageRules: [
+    {
+      description: "Custom versioning for BusyBox",
+      matchPackageNames: ["busybox"],
+      extractVersion: "^(?<version>.*)-glibc$",
+    },
+    {
+      description: "Custom versioning for Cells",
+      matchPackageNames: ["pydio/cells"],
+      extractVersion: "^v(?<version>.*)$",
+    },
   ],
 }
