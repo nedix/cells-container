@@ -5,21 +5,21 @@
   customManagers: [
     {
       depNameTemplate: "Alpine",
-      fileMatch: ["^Dockerfile$"],
+      fileMatch: ["^Containerfile$"],
       matchStrings: ["ARG ALPINE_VERSION=(?<currentValue>.*?)\\n"],
       datasourceTemplate: "docker",
       packageNameTemplate: "alpine",
     },
     {
       depNameTemplate: "BusyBox",
-      fileMatch: ["^Dockerfile$"],
+      fileMatch: ["^Containerfile$"],
       matchStrings: ["ARG BUSYBOX_VERSION=(?<currentValue>.*?)\\n"],
       datasourceTemplate: "docker",
       packageNameTemplate: "busybox",
     },
     {
       depNameTemplate: "Cells",
-      fileMatch: ["^Dockerfile$"],
+      fileMatch: ["^Containerfile$"],
       matchStrings: ["ARG CELLS_VERSION=(?<currentValue>.*?)\\n"],
       datasourceTemplate: "github-releases",
       packageNameTemplate: "pydio/cells",
