@@ -12,6 +12,6 @@ docker run --pull always --rm --name cells \
     nedix/cells
 ```
 
-#### 2. Configure using the wizard
+#### 2. Configure using the installation wizard
 
-- Navigate to the Cells setup wizard on http://127.0.0.1:8080
+- Navigate to the Cells installation wizard on http://127.0.0.1:8080
