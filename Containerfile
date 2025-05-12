@@ -35,8 +35,8 @@ COPY --link --from=build /build/pydio/entrypoint.sh /entrypoint.sh
 COPY --link --from=build /etc/ssl/certs /etc/ssl/certs
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["cells", "start"]
+CMD ["cells", "start", "--bind", ":80", "--site_no_tls"]
 
-EXPOSE 8080
+EXPOSE 80
 
 VOLUME /var/cells
