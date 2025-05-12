@@ -4,7 +4,7 @@
 
 #### 1. Start the service
 
-This example command will start the server on port 8080.
+This example command will start the service on port 8080:
 
 ```shell
 docker run --pull always --rm --name cells \
@@ -12,6 +12,6 @@ docker run --pull always --rm --name cells \
     nedix/cells
 ```
 
-#### 2. Configure using the installation wizard
+#### 2. Run the setup wizard
 
-- Navigate to the Cells installation wizard on http://127.0.0.1:8080
+Open a browser window to http://127.0.0.1:8080.
