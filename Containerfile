@@ -20,7 +20,6 @@ RUN case "$(uname -m)" in \
     && wget "https://download.pydio.com/pub/cells/release/${CELLS_VERSION}/linux-${CELLS_ARCHITECTURE}/cells" \
     && wget -O jq "https://download.pydio.com/pub/linux/tools/jq-linux64-v${JQ_VERSION}" \
     && wget -O entrypoint.sh "https://raw.githubusercontent.com/pydio/cells/v${CELLS_VERSION}/tools/docker/images/cells/docker-entrypoint.sh" \
-    && wget -O libdl.so.2 "https://raw.githubusercontent.com/pydio/cells/v${CELLS_VERSION}/tools/docker/images/cells/libdl.so.2" \
     && chmod +x \
         cells \
         entrypoint.sh \
@@ -30,7 +29,6 @@ FROM busybox:${BUSYBOX_VERSION}-glibc
 
 COPY --link --from=build /build/pydio/cells /usr/bin/cells
 COPY --link --from=build /build/pydio/jq /usr/bin/jq
-COPY --link --from=build /build/pydio/libdl.so.2 /lib64/libdl.so.2
 COPY --link --from=build /build/pydio/entrypoint.sh /entrypoint.sh
 COPY --link --from=build /etc/ssl/certs /etc/ssl/certs
 
