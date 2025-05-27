@@ -1,17 +1,23 @@
-# [cells-container](https://github.com/nedix/cells-container)
+# [cells-container][project]
+
 
 ## Usage
 
-#### 1. Start the service
 
-This command will start the service on port `8080`:
+### 1. Start the container
+
+This command will start the container on port `80`:
 
 ```shell
-docker run --pull always --rm --name cells \
-    -p 127.0.0.1:8080:80 \
+docker run --rm --pull always --name cells \
+    -p 127.0.0.1:80:80 \
     nedix/cells
 ```
 
-#### 2. Start the configuration wizard
 
-Open a browser window to http://127.0.0.1:8080.
+### 2. Run the setup wizard
+
+Open a browser window to http://127.0.0.1:80.
+
+
+[project]: https://hub.docker.com/r/nedix/cells
