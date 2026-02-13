@@ -6,9 +6,12 @@ destroy:
 
 up: HTTP_PORT = "80"
 up:
-	@docker run --rm -d --name cells \
-        -p 127.0.0.1:$(HTTP_PORT):80 \
-        cells
+	@docker run \
+		--name cells \
+		--rm \
+		-p 127.0.0.1:$(HTTP_PORT):80 \
+		-d \
+		cells
 	@docker logs -f cells
 
 down:
