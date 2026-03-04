@@ -11,8 +11,10 @@ ARG JQ_VERSION
 WORKDIR /build/pydio
 
 RUN case "$(uname -m)" in \
-        aarch64|arm*) CELLS_ARCHITECTURE="arm64"; \
-        ;; amd64|x86_64) CELLS_ARCHITECTURE="amd64"; \
+        aarch64|arm*) \
+            CELLS_ARCHITECTURE="arm64"; \
+        ;; amd64|x86_64) \
+            CELLS_ARCHITECTURE="amd64"; \
         ;; *) echo "Unsupported architecture: $(uname -m)"; exit 1; ;; \
     esac \
     && apk add \
