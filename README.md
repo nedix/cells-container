@@ -12,7 +12,7 @@ This command will start the container on port `80`:
 docker run \
     --name cells \
     --pull always \
-    --rm \
+    --restart unless-stopped \
     -p 127.0.0.1:80:80 \
     nedix/cells
 ```
